@@ -618,23 +618,29 @@
             </div>
           </div>
           <div class="formbar">
-            <div class="namebar">
-              <div class="namedata">
-                <input type="text" placeholder="Name" />
+            <form id="contactForm">
+              <div class="namebar">
+                <div class="namedata">
+                  <input type="text" id="name" placeholder="Name" />
+                  <span class="error" id="nameError"></span>
+                </div>
+                <div class="namedata">
+                  <input type="email" id="email" placeholder="Email" />
+                  <span class="error" id="emailError"></span>
+                </div>
               </div>
-              <div class="namedata">
-                <input type="email" placeholder="Email" />
+              <div class="subjectbar">
+                <input type="text" id="subject" placeholder="Subject" />
+                <span class="error" id="subjectError"></span>
               </div>
-            </div>
-            <div class="subjectbar">
-              <input type="text" placeholder="Subject" />
-            </div>
-            <div class="messagebar">
-              <textarea></textarea>
-            </div>
-            <div class="buttonbar">
-              <button>Send Message</button>
-            </div>
+              <div class="messagebar">
+                <textarea id="message" placeholder="Message"></textarea>
+                <span class="error" id="messageError"></span>
+              </div>
+              <div class="buttonbar">
+                <button type="submit">Send Message</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -655,4 +661,67 @@
       </div>
     </section>
   </body>
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      document.getElementById("nameError").style.display = "none";
+      document.getElementById("emailError").style.display = "none";
+      document.getElementById("subjectError").style.display = "none";
+      document.getElementById("messageError").style.display = "none";
+
+      let hasError = false;
+
+      if (!name) {
+        document.getElementById("nameError").textContent =
+          "Please enter your name.";
+        document.getElementById("nameError").style.display = "block";
+        hasError = true;
+      }
+
+      if (!email) {
+        document.getElementById("emailError").textContent =
+          "Please enter your email.";
+        document.getElementById("emailError").style.display = "block";
+        hasError = true;
+      } else if (!validateEmail(email)) {
+        document.getElementById("emailError").textContent =
+          "Please enter a valid email.";
+        document.getElementById("emailError").style.display = "block";
+        hasError = true;
+      }
+
+      if (!subject) {
+        document.getElementById("subjectError").textContent =
+          "Please enter a subject.";
+        document.getElementById("subjectError").style.display = "block";
+        hasError = true;
+      }
+
+      if (!message) {
+        document.getElementById("messageError").textContent =
+          "Please enter your message.";
+        document.getElementById("messageError").style.display = "block";
+        hasError = true;
+      }
+
+      if (!hasError) {
+        alert("Form submitted successfully!");
+      }
+    }
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(String(email).toLowerCase());
+    }
+
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", validateForm);
+  </script>
 </html>

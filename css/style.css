@@ -844,6 +844,13 @@ h3 {
   outline: none;
 }
 
+.error {
+  color: red;
+  font-size: 12px;
+  display: none;
+  margin-top: 5px;
+}
+
 .buttonbar {
   padding: 20px 0px;
 }
