@@ -16,6 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).addClass("active");
   });
 
+  $(".nav1 ul li:first").addClass("active");
+  $(".nav1 ul li").click(function () {
+    $(".nav1 ul li").removeClass("active");
+    $(this).addClass("active");
+  });
+
   $(".imagesection").hide();
   $(".imagesection:first").show();
   $(".tabdata ul li:first").addClass("active");
