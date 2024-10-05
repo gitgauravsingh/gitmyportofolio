@@ -1,0 +1,1076 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  display: block;
+  background: #000;
+  padding: 15px 0px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 189px;
+  height: 40px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.linebar {
+  display: none;
+  cursor: pointer;
+}
+
+.linebar span {
+  display: block;
+  width: 20px;
+  background: #fff;
+  height: 2px;
+  margin-top: 3px;
+  transition: all 0.3s ease;
+}
+
+.linebar.active span:nth-child(1) {
+  transform: rotate(45deg) translate(2px, 2px);
+}
+
+.linebar.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.linebar.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav {
+  display: block;
+}
+
+.nav ul {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav ul li {
+  padding: 10px 0px;
+}
+
+.nav ul li a {
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #ff0000;
+  left: 0;
+  bottom: -10px;
+  transition: width 0.6s ease;
+}
+
+.nav ul li a:hover::after {
+  width: 100%;
+}
+
+.nav ul li a {
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav ul li a:hover {
+  color: #ff0000;
+}
+
+.nav ul li.active a {
+  color: #ff0000;
+}
+
+.nav ul li.active a::after,
+.nav ul li a:hover::after {
+  width: 100%;
+}
+.nav1 {
+  display: block;
+  background: #000;
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 11;
+}
+
+.nav1 ul {
+  display: block;
+  gap: 30px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav1 ul li {
+  padding: 19px 25px;
+  border-bottom: solid 1px #ddd;
+}
+
+.nav1 ul li a {
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav1 ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #ff0000;
+  left: 0;
+  bottom: -10px;
+  transition: width 0.6s ease;
+}
+
+.nav1 ul li a:hover::after {
+  width: 100%;
+}
+
+.nav1 ul li a {
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav1 ul li a.active,
+.nav ul li a:hover {
+  color: #ff0000;
+}
+
+.nav1 ul li a.active::after,
+.nav ul li a:hover::after {
+  width: 100%;
+}
+
+#opennav {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+.banner {
+  background-image: url(../img/back-end-scaled.jpg);
+  background-position: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.detailbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 43%;
+  align-items: center;
+}
+
+.detailbar img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+}
+
+.textbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.textbar h2 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.textbar p {
+  font-size: 18px;
+  color: red;
+  font-weight: 600;
+}
+
+.iconbar {
+  margin-top: 15px;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.iconbar i {
+  font-size: 18px;
+  color: #fff;
+}
+
+.about {
+  display: block;
+  width: 100%;
+  background: #000;
+}
+
+.about .abouttext {
+  display: block;
+  padding: 30px 0px;
+  text-align: center;
+}
+
+.about .abouttext h2 {
+  font-size: 25px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.about .abouttext p {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 35px;
+}
+
+.namedetail {
+  display: block;
+  width: 100%;
+  padding: 20px 0px;
+}
+
+.namedetail .namedata {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0px;
+}
+
+.namedetail .namedata h3 {
+  font-size: 17px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.namedetail .namedata p {
+  font-size: 17px;
+  color: #ddd;
+  font-weight: 300;
+}
+
+.namedetail .bottonbar {
+  display: block;
+  padding: 20px 0px;
+}
+
+.namedetail .bottonbar a {
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  background: sandybrown;
+  text-decoration: none;
+}
+
+.MyResumdata {
+  display: block;
+  background: #003366;
+  width: 100%;
+}
+
+.resumebar {
+  display: block;
+  padding: 30px 0px;
+  text-align: center;
+}
+
+.resumebar h2 {
+  font-size: 25px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.collegedetail {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0px;
+}
+
+.college {
+  width: 48%;
+}
+
+.college h2 {
+  font-size: 18px;
+  color: #fff;
+}
+
+.college h2 span {
+  font-size: 18px;
+  color: #993d00;
+}
+
+.college strong {
+  display: flex;
+  width: 100%;
+  height: 3px;
+  background: orange;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 15px;
+}
+
+.college strong::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  content: "";
+  background: #fff;
+}
+
+.college h3 {
+  font-size: 18px;
+  color: #fff;
+  line-height: 50px;
+}
+
+.college span {
+  font-size: 18px;
+  color: green;
+}
+
+.college p {
+  font-size: 16px;
+  color: #ddd;
+  line-height: 25px;
+  margin-top: 15px;
+  text-align: justify;
+}
+
+.myservicebar {
+  display: block;
+  width: 100%;
+  background: #000;
+}
+
+.servicebar {
+  display: block;
+  text-align: center;
+  padding: 30px 0px;
+}
+
+.servicebar h2 {
+  font-size: 25px;
+  color: #fff;
+  line-height: 50px;
+}
+
+.servicebar p {
+  font-size: 16px;
+  color: #ddd;
+  line-height: 25px;
+}
+
+.servicedata {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 30px 0px;
+  justify-content: space-between;
+}
+
+.mainservice {
+  width: 32%;
+  text-align: center;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px 20px;
+  margin-top: 20px;
+}
+
+.mainservice i {
+  padding: 33px 30px;
+  border-radius: 50%;
+  font-size: 25px;
+  color: #99ccff;
+  background: #ddd;
+}
+
+.mainservice:nth-child(2) i {
+  color: orange;
+}
+
+.mainservice:nth-child(3) i {
+  color: green;
+  padding: 33px 33px;
+}
+.mainservice:nth-child(4) i {
+  color: brown;
+  padding: 33px 33px;
+}
+.mainservice:nth-child(5) i {
+  color: #ff99ff;
+  padding: 33px 33px;
+}
+.mainservice:nth-child(6) i {
+  color: #0000ff;
+  padding: 33px 33px;
+}
+
+.mainservice:nth-child(1):hover i {
+  background: #99ccff;
+  color: #fff;
+  transition: 0.6s;
+}
+
+.mainservice:nth-child(2):hover i {
+  background: orange;
+  color: #fff;
+  transition: 0.6s;
+}
+
+.mainservice:nth-child(3):hover i {
+  background: green;
+  color: #fff;
+  transition: 0.6s;
+}
+.mainservice:nth-child(4):hover i {
+  background: brown;
+  color: #fff;
+  transition: 0.6s;
+}
+.mainservice:nth-child(5):hover i {
+  background: #ff99ff;
+  color: #fff;
+  transition: 0.6s;
+}
+.mainservice:nth-child(6):hover i {
+  background: #0000ff;
+  color: #fff;
+  transition: 0.6s;
+}
+
+.mainservice h3 {
+  font-size: 22px;
+  color: #000;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.mainservice p {
+  font-size: 17px;
+  color: #666;
+  line-height: 30px;
+  margin-top: 20px;
+}
+
+.myskillbar {
+  display: block;
+  width: 100%;
+  background: #003300;
+}
+
+.skillsdata {
+  display: block;
+  text-align: center;
+  padding: 30px 0px;
+}
+
+.skillsdata h2 {
+  font-size: 25px;
+  color: #fff;
+  line-height: 50px;
+}
+
+.skillsdata p {
+  font-size: 16px;
+  color: #ddd;
+  line-height: 25px;
+}
+
+.coursedetail {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0px;
+}
+
+.databar {
+  width: 48%;
+  padding: 15px 0px;
+}
+
+.databar .coursedata {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.databar .coursedata h3 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.databar .coursedata h4 {
+  font-size: 18px;
+  color: #ddd;
+  font-weight: 400;
+}
+
+.databar .rangebar {
+  width: 100%;
+  background: #ddd;
+  height: 7px;
+  border-radius: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.databar .rangebar span {
+  display: block;
+  width: 90%;
+  background: #660033;
+  height: 7px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+}
+
+.databar:nth-child(2) .rangebar span {
+  width: 70%;
+}
+.databar:nth-child(3) .rangebar span {
+  width: 70%;
+}
+.databar:nth-child(4) .rangebar span {
+  width: 80%;
+}
+.databar:nth-child(5) .rangebar span {
+  width: 70%;
+}
+.databar:nth-child(6) .rangebar span {
+  width: 70%;
+}
+.databar:nth-child(7) .rangebar span {
+  width: 60%;
+}
+.databar:nth-child(8) .rangebar span {
+  width: 50%;
+}
+.databar:nth-child(9) .rangebar span {
+  width: 80%;
+}
+.databar:nth-child(10) .rangebar span {
+  width: 80%;
+}
+.databar:nth-child(11) .rangebar span {
+  width: 80%;
+}
+.databar:nth-child(12) .rangebar span {
+  width: 70%;
+}
+
+.Portfoliobar {
+  display: block;
+  background: #000;
+  width: 100%;
+}
+
+.Portfoliobar .profilebar {
+  display: block;
+  text-align: center;
+  padding: 30px 0px;
+}
+
+.Portfoliobar .profilebar h2 {
+  font-size: 25px;
+  color: #fff;
+  line-height: 50px;
+}
+
+.Portfoliobar .profilebar p {
+  font-size: 16px;
+  color: #ddd;
+  line-height: 25px;
+}
+
+.tabdata {
+  display: block;
+  padding: 15px 0px;
+}
+
+.tabdata ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+
+.tabdata ul li {
+  padding: 10px 0px;
+  border-radius: 20px;
+}
+
+.tabdata ul li a {
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+.tabdata ul li.active,
+.tabdata ul li:hover {
+  background: #0099ff;
+}
+
+.imagesection {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+
+.imgbar {
+  width: 31%;
+}
+
+.imgbar span {
+  display: block;
+  position: relative;
+  margin-top: 15px;
+}
+
+.imgbar span img {
+  width: 100%;
+}
+
+.imgbar span .textbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  height: 0px;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0px 10px;
+  transition: 0.6s;
+  overflow: hidden;
+}
+
+.imgbar span:hover .textbar {
+  height: 80px;
+}
+
+.imgbar span .textbar h2,
+h3 {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.Contactbar {
+  width: 100%;
+  background: #33cccc;
+}
+
+.Contactdata {
+  display: block;
+  text-align: center;
+  padding: 30px 0px;
+}
+
+.Contactdata h2 {
+  font-size: 25px;
+  color: #fff;
+  line-height: 50px;
+}
+
+.Contactdata p {
+  font-size: 16px;
+  color: #fff;
+  line-height: 25px;
+}
+
+.formdata {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 0px;
+}
+
+.adressbar {
+  width: 35%;
+}
+
+.firstadress {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.firstadress i {
+  background: #ddd;
+  padding: 22px 25px;
+  border-radius: 50%;
+  color: #993d00;
+  font-size: 20px;
+}
+
+.firstadress:hover i {
+  background: #660033;
+  color: #fff;
+  transition: 0.6s;
+}
+
+.firstadress .adress {
+  display: block;
+}
+
+.firstadress .adress h3 {
+  font-size: 18px;
+  color: #000;
+  font-weight: 400;
+}
+
+.firstadress .adress p {
+  font-size: 15px;
+  color: #ddd;
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+.formbar {
+  width: 60%;
+}
+
+.formbar .namebar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.formbar .namebar .namedata {
+  width: 48%;
+}
+
+.formbar .namebar input {
+  width: 100%;
+  background: none;
+  border: solid 1px #666;
+  padding: 14px 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.formbar .subjectbar {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.formbar .subjectbar input {
+  width: 100%;
+  background: none;
+  border: solid 1px #666;
+  padding: 14px 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.formbar .messagebar {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.formbar .messagebar textarea {
+  width: 100%;
+  height: 120px;
+  background: none;
+  border: solid 1px #666;
+  padding: 14px 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.buttonbar {
+  padding: 20px 0px;
+}
+
+.buttonbar button {
+  padding: 16px 24px;
+  background: #003300;
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+}
+
+.locationbar {
+  background: #000;
+  width: 100%;
+}
+
+.mapbar {
+  width: 100%;
+  padding: 30px 0px;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+  .header {
+    width: 100%;
+    padding: 15px 20px;
+  }
+  .nav {
+    display: none;
+  }
+  .linebar {
+    display: block;
+  }
+  .nav1 {
+    display: block;
+  }
+
+  .banner {
+    width: 100%;
+  }
+
+  .detailbar {
+    width: 100%;
+  }
+
+  .textbar h2 {
+    font-size: 20px;
+    color: darkgoldenrod;
+    font-weight: 700;
+  }
+
+  .textbar p {
+    font-size: 18px;
+    color: red;
+    font-weight: 600;
+  }
+
+  .iconbar {
+    margin-top: 15px;
+    display: inline-flex;
+    gap: 10px;
+  }
+
+  .iconbar i {
+    font-size: 18px;
+    color: brown;
+  }
+
+  .about {
+    width: 100%;
+    padding: 0px 20px;
+  }
+
+  .about .abouttext h2 {
+    font-size: 20px;
+  }
+
+  .about .abouttext p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .namedetail .namedata h3 {
+    font-size: 15px;
+  }
+
+  .namedetail .namedata p {
+    font-size: 14px;
+  }
+
+  .namedetail .bottonbar a {
+    padding: 10px 15px;
+  }
+
+  .MyResumdata {
+    width: 100%;
+    padding: 0px 20px;
+  }
+
+  .resumebar h2 {
+    font-size: 20px;
+  }
+
+  .collegedetail {
+    display: block;
+  }
+
+  .college {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .college h2 {
+    font-size: 16px;
+  }
+
+  .college h3 {
+    font-size: 16px;
+  }
+
+  .college span {
+    font-size: 16px;
+  }
+
+  .college p {
+    text-align: justify;
+  }
+
+  .myservicebar {
+    width: 100%;
+    padding: 0px 20px;
+  }
+
+  .servicebar h2 {
+    font-size: 20px;
+  }
+
+  .servicebar p {
+    font-size: 16px;
+  }
+
+  .servicedata {
+    display: block;
+  }
+
+  .mainservice {
+    width: 100%;
+  }
+
+  .myskillbar {
+    width: 100%;
+    padding: 0px 20px;
+  }
+
+  .skillsdata h2 {
+    font-size: 20px;
+  }
+
+  .skillsdata p {
+    font-size: 15px;
+  }
+
+  .coursedetail {
+    display: block;
+  }
+
+  .databar {
+    width: 100%;
+  }
+
+  .Portfoliobar {
+    width: 100%;
+    padding: 0px 20px;
+  }
+
+  .Portfoliobar .profilebar h2 {
+    font-size: 20px;
+  }
+
+  .Portfoliobar .profilebar p {
+    font-size: 16px;
+  }
+
+  .imagesection {
+    display: block;
+  }
+
+  .imgbar {
+    width: 100%;
+  }
+
+  .Contactbar {
+    width: 100%;
+    padding: 0px 20px;
+  }
+
+  .Contactdata h2 {
+    font-size: 20px;
+  }
+
+  .Contactdata p {
+    font-size: 16px;
+  }
+
+  .formdata {
+    display: block;
+  }
+
+  .adressbar {
+    width: 100%;
+  }
+
+  .firstadress .adress p {
+    line-height: 20px;
+  }
+
+  .formbar {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .locationbar {
+    width: 100%;
+    padding: 0px 20px;
+  }
+}
