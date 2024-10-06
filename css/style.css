@@ -869,6 +869,17 @@ h3 {
   width: 100%;
 }
 
+.locationdata {
+  display: block;
+  text-align: center;
+  padding: 30px 0px;
+}
+
+.locationdata h2 {
+  font-size: 25px;
+  color: #fff;
+}
+
 .mapbar {
   width: 100%;
   padding: 30px 0px;
@@ -1079,5 +1090,9 @@ h3 {
   .locationbar {
     width: 100%;
     padding: 0px 20px;
+  }
+
+  .locationdata h2 {
+    font-size: 20px;
   }
 }
